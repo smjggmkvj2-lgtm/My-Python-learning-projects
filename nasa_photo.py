@@ -1,6 +1,6 @@
 import requests
-from config import api_key
-url = "https://api.nasa.gov/planetary/apod?api_key=" + api_key
+from config import nasa_api_key
+url = "https://api.nasa.gov/planetary/apod?api_key=" + nasa_api_key
 response = requests.get(url)
 if response.status_code == 200:
     data = response.json()
