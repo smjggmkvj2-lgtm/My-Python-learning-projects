@@ -10,3 +10,7 @@ if response.status_code == 200:
     print("\nURL:", data["url"])
 else:
     print("Error fetching data from NASA API")
+
+with open("nasa_photo.jpg", "wb") as f:
+    f.write(requests.get(data["url"]).content)
+print("Photo saved as nasa_photo.jpg")
