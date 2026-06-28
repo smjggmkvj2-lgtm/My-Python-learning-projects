@@ -18,7 +18,6 @@ A collection of Python projects built while learning programming.
 - **News Aggregator** - Get latest news from an API
 - **OCR** - Extract text from an image
 - **Password Manager** - Save and manage passwords
-- **Telegram Bot** - A simple Telegram bot project
 - **Translator** - Translate text using Python
 - **Wikipedia API** - Search information from Wikipedia
 ## Skills learned
