@@ -4,7 +4,7 @@ A collection of Python projects I built while learning programming and improving
 
 I am currently learning Python through small projects and gradually working with topics such as object-oriented programming, databases, APIs, file handling, input validation and Git.
 
-## Featured Project
+## Featured Projects
 
 ### Finance Manager
 
