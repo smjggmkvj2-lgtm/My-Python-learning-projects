@@ -30,7 +30,6 @@ class ExamTracker:
                 print(f"Id: {exam[0]} | Subject: {exam[1]} | Date: {exam[2]} | {status}")
     def delete_exam(self, exam_id):
         self.c.execute('DELETE FROM exams WHERE id = ?', (exam_id,))
-        exam_id = self.c.fetchall()
         self.conn.commit()
         print(f"Exam with ID {exam_id} deleted successfully.")
     def edit_exam(self, exam_id, new_subject=None, new_date=None):
