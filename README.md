@@ -39,11 +39,38 @@ A command-line application for managing personal income and expenses.
 
 File: [`finance_manager.py`](finance_manager.py)
 
-## Other Projects
-
 ### Exam Tracker
 
-A school exam manager using Python and SQLite to store exam information.
+A command-line application for organizing and tracking school exams.
+
+**Technologies:** Python, SQLite
+
+**Features:**
+
+* Add exams with subject and date
+* View all saved exams
+* Edit existing exams
+* Delete exams
+* Mark exams as done or not done
+* Store exam data in an SQLite database
+* Validate exam IDs before editing, deleting or changing status
+* Validate dates using the `DD.MM.YYYY` format
+* Prevent empty subjects
+
+**What I learned:**
+
+* Working with SQLite databases
+* Building CRUD functionality
+* Using parameterized SQL queries
+* Validating user input
+* Handling errors with `try` / `except`
+* Working with classes and methods
+* Managing application state
+* Organizing program execution with a `main()` function
+
+File: [`exam_tracker_sql.py`](exam_tracker_sql.py)
+
+## Other Projects
 
 ### Contact Manager
 
