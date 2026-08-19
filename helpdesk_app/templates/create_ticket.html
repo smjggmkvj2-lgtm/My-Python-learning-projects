@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Create Ticket</h1>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+    <form method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="{{ title|default('') }}">
+
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description">{{ description|default('') }}</textarea>
+        <label for="priority">Priority:</label><br>
+
+        <select id="priority" name="priority">
+            <option value="Low"
+                {% if priority|default("Medium") == "Low" %}selected{% endif %}>
+                Low
+            </option>
+
+            <option value="Medium"
+                {% if priority|default("Medium") == "Medium" %}selected{% endif %}>
+                Medium
+            </option>
+
+            <option value="High"
+                {% if priority|default("Medium") == "High" %}selected{% endif %}>
+                High
+            </option>
+        </select>
+
+        <br><br>
+        <button type="submit">Create Ticket</button>
+    </form>
+</body>
+</html>

@@ -4,3 +4,5 @@ passwords.db
 finance.db
 __pycache__/
 *.pyc
+helpdesk_app/tickets.db
+helpdesk_app/__pycache__/

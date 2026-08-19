@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpdesk Ticket System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Helpdesk Ticket System</h1>
+
+    <a class="btn edit-btn" href="/create">Create New Ticket</a>
+
+    <h2>Tickets</h2>
+        <form class="filter-form" method="GET" action="/">
+            <label for="status">Filter by status:</label>
+
+            <select name="status" id="status">
+                <option value="All"
+                    {% if status_filter == "All" %}selected{% endif %}>
+                    All
+                </option>
+
+                <option value="Open"
+                    {% if status_filter == "Open" %}selected{% endif %}>
+                    Open
+                </option>
+
+                <option value="In Progress"
+                    {% if status_filter == "In Progress" %}selected{% endif %}>
+                    In Progress
+                </option>
+
+                <option value="Closed"
+                    {% if status_filter == "Closed" %}selected{% endif %}>
+                    Closed
+                </option>
+            </select>
+
+            <button type="submit">Filter</button>
+        </form>
+    {% if tickets %}
+        {% for ticket in tickets %}
+            <div class="ticket">
+                <h3>{{ ticket["title"] }}</h3>
+                <p>{{ ticket["description"] }}</p>
+                <p>Created: {{ ticket["created_at"] }}</p>
+                <p>
+                    Status:
+                    <span class="badge status-{{ ticket['status']|lower|replace(' ', '-') }}">
+                        {{ ticket["status"] }}
+                    </span>
+                </p>
+
+                <p>
+                    Priority:
+                    <span class="badge priority-{{ ticket['priority']|lower }}">
+                        {{ ticket["priority"] }}
+                    </span>
+                </p>
+                <div class="ticket-actions">
+                    <form method="POST" action="/update-status/{{ ticket['id'] }}">
+                        <select name="status">
+                            <option value="Open"
+                                {% if ticket["status"] == "Open" %}selected{% endif %}>
+                                Open
+                            </option>
+
+                            <option value="In Progress"
+                                {% if ticket["status"] == "In Progress" %}selected{% endif %}>
+                                In Progress
+                            </option>
+
+                            <option value="Closed"
+                                {% if ticket["status"] == "Closed" %}selected{% endif %}>
+                                Closed
+                            </option>
+                        </select>
+
+                        <button class="btn" type="submit">Update Status</button>
+                    </form>
+
+                    <a class="btn edit-btn" href="/edit/{{ ticket['id'] }}">
+                        Edit Ticket
+                    </a>
+
+                    <form method="POST" action="/delete/{{ ticket['id'] }}">
+                        <button class="btn delete-btn" type="submit">
+                            Delete Ticket
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>No tickets found.</p>
+    {% endif %}
+</body>
+</html>
