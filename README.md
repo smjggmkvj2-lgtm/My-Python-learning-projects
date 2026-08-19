@@ -70,7 +70,7 @@ A command-line application for organizing and tracking school exams.
 
 File: [`exam_tracker_sql.py`](exam_tracker_sql.py)
 
-## Weather App
+### Weather App
 
 A command-line weather application written in Python that retrieves current weather data for a city using the OpenWeather API.
 
@@ -165,10 +165,6 @@ The OpenWeather API key is stored locally in `config.py`.
 The real `config.py` file is excluded from Git using `.gitignore`, so the API key is not uploaded to the repository.
 
 A safe example configuration is provided in [`config.example.py`](config.example.py).
-
-## API Key
-
-The API key is stored locally in `config.py` and should not be uploaded to GitHub. `config.py` should be included in `.gitignore`.
 
 ## Other Projects
 
