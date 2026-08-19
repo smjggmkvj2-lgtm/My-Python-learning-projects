@@ -70,15 +70,111 @@ A command-line application for organizing and tracking school exams.
 
 File: [`exam_tracker_sql.py`](exam_tracker_sql.py)
 
+## Weather App
+
+A command-line weather application written in Python that retrieves current weather data for a city using the OpenWeather API.
+
+File: [`weather_app.py`](weather_app.py)
+
+### Features
+
+* Search for current weather by city name
+* Display the city and country
+* Show the local date and time for the selected city
+* Display the current temperature and "feels like" temperature
+* Show current weather conditions
+* Display humidity and wind speed
+* Search for multiple cities without restarting the program
+* Validate empty user input
+* Handle invalid city names
+* Handle invalid API keys
+* Handle connection errors and request timeouts
+
+### Technologies
+
+* Python
+* Requests
+* OpenWeather API
+* JSON
+* Datetime
+
+### What I Learned
+
+While building this project, I practiced:
+
+* sending HTTP GET requests to an external API
+* passing parameters with API requests
+* working with JSON responses
+* reading and using HTTP status codes
+* handling exceptions with `try` and `except`
+* validating user input
+* working with Unix timestamps and time zones
+* formatting dates, times, and numbers
+* organizing a Python program into separate functions
+* keeping an API key outside the main source code
+
+### Setup
+
+1. Make sure Python is installed.
+
+2. Install the Requests library:
+
+```bash
+pip install requests
+```
+
+3. Copy `config.example.py` and rename the copy to `config.py`.
+
+4. Add your OpenWeather API key to `config.py`:
+
+```python
+weather_api_key = "YOUR_API_KEY"
+```
+
+5. Run the application:
+
+```bash
+python weather_app.py
+```
+
+### Example
+
+```text
+==============================
+         WEATHER APP
+==============================
+
+Enter city: Mannheim
+
+Weather in Mannheim, DE
+Date (DD-MM-YYYY): 19-08-2026
+Time (HH:MM): 14:30
+Temperature: 24.3 °C
+Feels like: 24.6 °C
+Weather: Clear sky
+Humidity: 55 %
+Wind speed: 3.2 m/s
+
+Search another city? (y/n):
+```
+
+### API Key
+
+The OpenWeather API key is stored locally in `config.py`.
+
+The real `config.py` file is excluded from Git using `.gitignore`, so the API key is not uploaded to the repository.
+
+A safe example configuration is provided in [`config.example.py`](config.example.py).
+
+## API Key
+
+The API key is stored locally in `config.py` and should not be uploaded to GitHub. `config.py` should be included in `.gitignore`.
+
 ## Other Projects
 
 ### Contact Manager
 
 An object-oriented contact manager with file storage.
-
-### Weather App
-
-Retrieves weather information from an external API.
 
 ### Password Manager
 
